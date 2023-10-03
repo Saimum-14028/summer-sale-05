@@ -44,7 +44,7 @@
                 <h3 class="font-semibold text-3xl my-3">Kitchenware</h3>
 
                 <div class="md:grid grid-cols-3 gap-5">
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-1">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod1.png" alt="Kitchenware" class="rounded-xl" />
                         </figure>
@@ -57,11 +57,11 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                             </div>
                           <h2 class="card-title">Accessories</h2>
-                          <p><span>39.00</span> TK</p>
+                          <p><span id="">39.00</span> TK</p>
                         </div>
                     </div>
 
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-2">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod2.png" alt="Kitchenware" class="rounded-xl" />
                         </figure>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-3">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod3.png" alt="Kitchenware" class="rounded-xl" />
                         </figure>
@@ -101,7 +101,7 @@
                 <h3 class="font-semibold text-3xl my-3">Sportswear</h3>
 
                 <div class="md:grid grid-cols-3 gap-5">
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-4">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod4.png" alt="Sportswear" class="rounded-xl" />
                         </figure>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
 
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-5">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod5.png" alt="Sportswear" class="rounded-xl" />
                         </figure>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
 
-                    <div class="card bg-blue-50 my-2">
+                    <div class="card bg-blue-50 my-2" id="product-6">
                         <figure class="px-10 pt-10">
                           <img src="./images/prod6.png" alt="Sportswear" class="rounded-xl" />
                         </figure>
@@ -162,9 +162,9 @@
                   <p>Have coupon?</p>
                   
                   <div class="flex gap-2">
-                    <input type="text" placeholder="Coupon code" class="input input-bordered input-secondary w-full max-w-xs" />
+                    <input type="text" placeholder="Coupon code" class="input input-bordered input-secondary w-full max-w-xs" id="discount"/>
                     <div class="card-actions">
-                        <button class="btn btn-secondary">Apply</button>
+                        <button class="btn btn-secondary" id="apply" disabled>Apply</button>
                     </div>
                   </div>
                 </div>
@@ -172,15 +172,30 @@
 
             <div class="card bg-slate-50">
                 <div class="card-body">
-                  <ol type="1">
+                  <ul id="list">
             
-                  </ol>
+                  </ul>
                   
-                  <p>Total Price: <span class="text-red-700">0.00</span>Tk</p>
-                  <p>Discount: <span class="text-red-700">0.00</span>TK</p>
-                  <p>Total: <span class="text-red-700">0.00</span>TK</p>
+                  <p>Total Price: <span class="text-red-700" id="total-price">0.00</span>Tk</p>
+                  <p>Discount: <span class="text-red-700" id="discount20">0.00</span>TK</p>
+                  <p>Total: <span class="text-red-700" id="final-price">0.00</span>TK</p>
 
-                  <button class="btn btn-secondary">Make Purchase</button>
+                  <button class="btn btn-secondary" disabled onclick="my_modal_1.showModal()" id="make-purchase">Make Purchase</button>
+                  <dialog id="my_modal_1" class="modal">
+                  <div class="modal-box md:w-1/3 max-w-5xl">
+                      <div class="card mt-5">
+                          <figure>
+                          <img src="./images/congo.png" alt="" class="rounded-xl" />
+                          </figure>
+                          <div class="card-body items-center text-center">
+                          <h2 class="text-black font-bold text-xl">Congratulations</h2>
+                          <p class="font-medium">Your Purchase the product</p>
+                      </div>
+                      <div class="flex justify-center">
+                        <button class="btn btn-secondary font-bold" value="Reload Page" onClick="window.location.reload(true)">Go Home</button>
+                      </div>
+                  </div>
+                  </dialog>
                 </div>
               </div>
         </section>
